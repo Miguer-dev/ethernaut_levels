@@ -4,7 +4,7 @@ pragma solidity ^0.8.18;
 import {Test, console} from "forge-std/Test.sol";
 import {Fallback} from "../../src/Fallback.sol";
 
-contract FundMeTest is Test {
+contract FallbackTest is Test {
     Fallback fb;
 
     address TEST_USER_OWNER = makeAddr("userOwner");
