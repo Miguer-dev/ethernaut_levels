@@ -1,6 +1,6 @@
 -include .env
 
-.PHONY: all clean remove install update build attack-fallback attack-fallout attack-coinflip
+.PHONY: all clean remove install update build attack-fallback attack-fallout attack-coinflip attack-telephone
 
 help:
 	@echo "Usage:"
@@ -26,3 +26,6 @@ attack-fallout :
 
 attack-coinflip :
 	@forge script script/InteractionCoinFlip.s.sol --sig "run(address)" $(COINFLIP_CONTRACT_ADDRESS) --rpc-url $(GOERLI_RPC_URL) --broadcast --private-key $(GOERLI_PRIVATE_KEY)
+
+attack-telephone :
+	@forge script script/InteractionTelephone.s.sol:ChangeOwnerTelephone --sig "run(address)" $(TELEPHONE_CONTRACT_ADDRESS) --rpc-url $(GOERLI_RPC_URL) --broadcast --private-key $(GOERLI_PRIVATE_KEY)
