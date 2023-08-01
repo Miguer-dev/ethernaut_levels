@@ -1,6 +1,6 @@
 -include .env
 
-.PHONY: all clean remove install update build attack-fallback attack-fallout
+.PHONY: all clean remove install update build attack-fallback attack-fallout attack-coinflip
 
 help:
 	@echo "Usage:"
@@ -23,3 +23,6 @@ attack-fallback :
 
 attack-fallout :
 	@cast send $(FALLOUT_CONTRACT_ADDRESS) "Fal1out()" --rpc-url $(GOERLI_RPC_URL) --private-key $(GOERLI_PRIVATE_KEY)
+
+attack-coinflip :
+	@forge script script/InteractionCoinFlip.s.sol --sig "run(address)" $(COINFLIP_CONTRACT_ADDRESS) --rpc-url $(GOERLI_RPC_URL) --broadcast --private-key $(GOERLI_PRIVATE_KEY)
