@@ -2,7 +2,7 @@
 pragma solidity ^0.8.19;
 
 import {Script, console} from "forge-std/Script.sol";
-import {Telephone} from "../src/Telephone.sol";
+import {Telephone} from "../../src/Telephone.sol";
 
 contract ChangeOwnerTelephone is Script {
     function changeOwnerTelephone(address myCoinFlipContract) public {

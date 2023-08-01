@@ -2,7 +2,7 @@
 pragma solidity ^0.7.2;
 
 import {Script, console} from "forge-std/Script.sol";
-import {Token} from "../src/Token.sol";
+import {Token} from "../../src/Token.sol";
 
 contract TransferTokens is Script {
     function transferTokens(address tokenContract, address attackerAddress) public {
