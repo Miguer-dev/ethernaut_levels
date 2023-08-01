@@ -29,16 +29,3 @@ contract TelephoneTest is Test {
     }
 
 }
-
-/*
-contract InteractWithTelephone {
-  
-  address targetContractAddress = 0x4D10Aa0Df652522A0160F1B821be6C15D26E6CBd;
-  
-  Telephone tel = Telephone(targetContractAddress);  
-
-  function interact() public {    
-    tel.changeOwner(0x425a021c5b15f4329B39A1705d22a24c68dB8849);   
-  }
-}
-*/
