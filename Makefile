@@ -1,6 +1,6 @@
 -include .env
 
-.PHONY: all clean remove install update build attack-fallback attack-fallout attack-coinflip attack-telephone
+.PHONY: all clean remove install update build attack-fallback attack-fallout attack-coinflip attack-telephone attack-token
 
 help:
 	@echo "Usage:"
