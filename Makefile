@@ -29,3 +29,6 @@ attack-coinflip :
 
 attack-telephone :
 	@forge script script/InteractionTelephone.s.sol:ChangeOwnerTelephone --sig "run(address)" $(TELEPHONE_CONTRACT_ADDRESS) --rpc-url $(GOERLI_RPC_URL) --broadcast --private-key $(GOERLI_PRIVATE_KEY)
+
+attack-token :
+	@forge script script/InteractionToken.s.sol:TransferTokens --sig "run(address,address)" $(TOKEN_CONTRACT_ADDRESS) $(MY_ADDRESS)  --rpc-url $(GOERLI_RPC_URL) --broadcast --private-key $(GOERLI_PRIVATE_KEY)
