@@ -25,9 +25,8 @@ contract FalloutTest is Test {
 
     function testAttackerChangeOwner() public {
         vm.prank(TEST_USER_ATTACKER);
-        fallout.Fal1out();        
+        fallout.Fal1out();
 
         assertEq(fallout.owner(), TEST_USER_ATTACKER);
     }
-
 }

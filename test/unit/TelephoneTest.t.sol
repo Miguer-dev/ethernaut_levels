@@ -23,9 +23,8 @@ contract TelephoneTest is Test {
         assertEq(telephone.owner(), TEST_USER_OWNER);
     }
 
-    function testAttackerChangeOwner() public {        
-        telephone.changeOwner(TEST_USER_ATTACKER);    
+    function testAttackerChangeOwner() public {
+        telephone.changeOwner(TEST_USER_ATTACKER);
         assertEq(telephone.owner(), TEST_USER_ATTACKER);
     }
-
 }
