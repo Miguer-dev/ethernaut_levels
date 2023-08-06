@@ -1,6 +1,6 @@
 -include .env
 
-.PHONY: all clean remove install update build attack-fallback attack-fallout attack-coinflip attack-telephone attack-token attack-delegation attack-force
+.PHONY: all clean remove install update build attack-fallback attack-fallout attack-coinflip attack-telephone attack-token attack-delegation attack-force attack-king
 
 help:
 	@echo "Usage:"
@@ -38,3 +38,6 @@ attack-delegation :
 
 attack-force :
 	@forge script script/interaction/InteractionForce.s.sol --sig "run(address)" $(FORCE_CONTRACT_ADDRESS) --rpc-url $(GOERLI_RPC_URL) --broadcast --private-key $(GOERLI_PRIVATE_KEY)
+
+attack-king :
+	@forge script script/interaction/InteractionKing.s.sol --sig "run(address)" $(KING_CONTRACT_ADDRESS) --rpc-url $(GOERLI_RPC_URL) --broadcast --private-key $(GOERLI_PRIVATE_KEY)
