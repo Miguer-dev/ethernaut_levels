@@ -20,7 +20,7 @@ contract DelegationTest is Test {
         (delegation, delegate) = deployDelegation.run();
     }
 
-    function testOwnerIsSenderasd() public {
+    function testOwnerIsSender() public {
         console.log(delegate.owner());
         console.log(msg.sender);
         console.log(address(this));
