@@ -3,14 +3,17 @@ pragma solidity >=0.8.0 <0.9.0;
 
 import {Test, console} from "forge-std/Test.sol";
 import {CoinFlip} from "../../src/CoinFlip.sol";
+import {DeployCoinFlip} from "../../script/deploy/DeployCoinFlip.s.sol";
 
 contract CoinFlipTest is Test {
     CoinFlip coinFlip;
+    DeployCoinFlip deployCoinFlip;
 
     uint256 constant FACTOR = 57896044618658097711785492504343953926634992332820282019728792003956564819968;
 
     function setUp() external {
-        coinFlip = new CoinFlip();
+        deployCoinFlip = new DeployCoinFlip();
+        coinFlip = deployCoinFlip.run();
     }
 
     function testGuessFlip() public {
